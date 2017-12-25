@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MvvmLight.Practice.Model
+namespace MvvmLight.Practice.Model.Basic
 {
     public class WelcomeModel : ObservableObject
     {

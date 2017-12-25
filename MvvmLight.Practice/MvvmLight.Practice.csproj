@@ -51,6 +51,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
@@ -74,14 +75,95 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model\WelcomeModel.cs" />
-    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="Model\Sample\CompButtonModel.cs" />
+    <Compile Include="Model\Sample\ComplexInfoModel.cs" />
+    <Compile Include="Model\Sample\TreeNodeModel.cs" />
+    <Compile Include="Utility\ValidationRule\EmailRule.cs" />
+    <Compile Include="Utility\ValidationRule\RequiredRule.cs" />
+    <Compile Include="Utility\Validation\ValidationObject.cs" />
+    <Compile Include="ViewModel\Validation\DataAnnotationViewModel.cs" />
+    <Compile Include="ViewModel\Validation\DataErrorInfoViewModel.cs" />
+    <Compile Include="ViewModel\Validation\ExceptionViewModel.cs" />
+    <Compile Include="ViewModel\Validation\FormValidationViewModel.cs" />
+    <Compile Include="ViewModel\Validation\ValidationObjectViewModel.cs" />
+    <Compile Include="ViewModel\Validation\ValidationRuleViewModel.cs" />
+    <Compile Include="View\UserControl\FruitInfoView.xaml.cs">
+      <DependentUpon>FruitInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\Sample\CheckBoxGroupViewModel.cs" />
+    <Compile Include="ViewModel\Sample\ListBoxViewModel.cs" />
+    <Compile Include="ViewModel\Sample\RadioButtonGroupViewModel.cs" />
+    <Compile Include="ViewModel\Sample\RadioButtonViewModel.cs" />
+    <Compile Include="Model\Basic\UserInfoModel.cs" />
+    <Compile Include="Model\Basic\WelcomeModel.cs" />
+    <Compile Include="ViewModel\Bind\BasicBindViewModel.cs" />
+    <Compile Include="ViewModel\Bind\DataContextBindViewModel.cs" />
+    <Compile Include="ViewModel\Basic\BothWayBindViewModel.cs" />
+    <Compile Include="AppViewModel.cs" />
+    <Compile Include="ViewModel\Sample\ComboBoxViewModel.cs" />
+    <Compile Include="ViewModel\Sample\TreeViewViewModel.cs" />
+    <Compile Include="ViewModel\Sample\UserControlViewModel.cs" />
+    <Compile Include="ViewModel\UserControl\FruitInfoViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
-    <Compile Include="ViewModel\WelcomeViewModel.cs" />
-    <Compile Include="View\WelcomeView.xaml.cs">
+    <Compile Include="ViewModel\Basic\WelcomeViewModel.cs" />
+    <Compile Include="View\Bind\BasicBindView.xaml.cs">
+      <DependentUpon>BasicBindView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Bind\DataContextBindView.xaml.cs">
+      <DependentUpon>DataContextBindView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Bind\RelativeSourceBindView.xaml.cs">
+      <DependentUpon>RelativeSourceBindView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Bind\SourceBindView.xaml.cs">
+      <DependentUpon>SourceBindView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Basic\BothWayBindView.xaml.cs">
+      <DependentUpon>BothWayBindView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sample\CheckBoxGroupView.xaml.cs">
+      <DependentUpon>CheckBoxGroupView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sample\ComboBoxView.xaml.cs">
+      <DependentUpon>ComboBoxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sample\ListBoxView.xaml.cs">
+      <DependentUpon>ListBoxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sample\RadioButtonGroupView.xaml.cs">
+      <DependentUpon>RadioButtonGroupView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sample\RadioButtonView.xaml.cs">
+      <DependentUpon>RadioButtonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sample\TreeViewView.xaml.cs">
+      <DependentUpon>TreeViewView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sample\UserControlView.xaml.cs">
+      <DependentUpon>UserControlView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Validation\DataAnnotationView.xaml.cs">
+      <DependentUpon>DataAnnotationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Validation\DataErrorInfoView.xaml.cs">
+      <DependentUpon>DataErrorInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Validation\ExceptionView.xaml.cs">
+      <DependentUpon>ExceptionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Validation\FormValidationView.xaml.cs">
+      <DependentUpon>FormValidationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Validation\ValidationObjectView.xaml.cs">
+      <DependentUpon>ValidationObjectView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Validation\ValidationRuleView.xaml.cs">
+      <DependentUpon>ValidationRuleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Basic\WelcomeView.xaml.cs">
       <DependentUpon>WelcomeView.xaml</DependentUpon>
     </Compile>
-    <Page Include="MainWindow.xaml">
+    <Page Include="AppView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -89,11 +171,91 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="AppView.xaml.cs">
+      <DependentUpon>AppView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\WelcomeView.xaml">
+    <Page Include="Resources\Styles\TextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\UserControl\FruitInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Bind\BasicBindView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Bind\DataContextBindView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Bind\RelativeSourceBindView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Bind\SourceBindView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Basic\BothWayBindView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Sample\CheckBoxGroupView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Sample\ComboBoxView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Sample\ListBoxView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Sample\RadioButtonGroupView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Sample\RadioButtonView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Sample\TreeViewView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Sample\UserControlView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Validation\DataAnnotationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Validation\DataErrorInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Validation\ExceptionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Validation\FormValidationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Validation\ValidationObjectView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Validation\ValidationRuleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Basic\WelcomeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -126,7 +288,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Images\1.jpg" />
+    <Resource Include="Resources\Images\2.jpg" />
+    <Resource Include="Resources\Images\3.jpg" />
+    <Resource Include="Resources\Images\4.jpg" />
+    <Resource Include="Resources\Images\5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\Validation\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

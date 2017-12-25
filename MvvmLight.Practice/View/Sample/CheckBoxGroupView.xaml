@@ -1,0 +1,32 @@
+﻿<Window x:Class="MvvmLight.Practice.View.Sample.CheckBoxGroupView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MvvmLight.Practice.View.Sample"
+        mc:Ignorable="d"
+        DataContext="{Binding Source={StaticResource Locator}, Path=CheckBoxGroup}"
+        WindowStartupLocation="CenterScreen"
+        Title="CheckBoxGroup" Height="300" Width="300">
+    <Grid>
+        <StackPanel Margin="10,0,0,50">
+            <TextBlock Text="复合框" FontWeight="Bold" FontSize="12" Margin="0,5,0,5" ></TextBlock>
+            <DockPanel x:Name="GroupCheckButton" >
+                <StackPanel DockPanel.Dock="Top" Width="auto">
+                    <ItemsControl ItemsSource="{Binding CheckButtons}" x:Name="cbt" >
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <CheckBox Content="{Binding Content}" IsChecked="{Binding IsCheck}"
+                                                 Command="{Binding DataContext.CheckCommand,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=ItemsControl}}"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+
+                <StackPanel DockPanel.Dock="Bottom"  Orientation="Horizontal" Margin="0,20,0,0">
+                    <TextBlock Text="{Binding CheckInfo,StringFormat='结果：\{0\}'}" ></TextBlock>
+                </StackPanel>
+            </DockPanel>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,5 +1,4 @@
-﻿using MvvmLight.Practice.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,17 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace MvvmLight.Practice.View
+namespace MvvmLight.Practice.View.Bind
 {
     /// <summary>
-    /// Interaction logic for WelcomeView.xaml
+    /// Interaction logic for BasicBind.xaml
     /// </summary>
-    public partial class WelcomeView : Window
+    public partial class BasicBindView : Window
     {
-        public WelcomeView()
+        public BasicBindView()
         {
             InitializeComponent();
-            
         }
     }
 }

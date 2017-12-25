@@ -1,0 +1,40 @@
+﻿<Window x:Class="MvvmLight.Practice.View.Sample.ListBoxView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MvvmLight.Practice.View.Sample"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        DataContext="{Binding Source={StaticResource Locator}, Path=ListBox}"
+        Title="ListBoxView" Height="450" Width="450">
+    <Grid>
+        <StackPanel Margin="10,0,0,50" Orientation="Vertical" >
+            <TextBlock Text="ListBox模板" FontWeight="Bold" FontSize="12" Margin="0,5,0,5" ></TextBlock>
+            <DockPanel >
+                <StackPanel HorizontalAlignment="Left" DockPanel.Dock="Top" >
+                    <ListBox x:Name="lb" ItemsSource="{Binding ListBoxData}" BorderThickness="0" ScrollViewer.HorizontalScrollBarVisibility="Hidden">
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Width="{Binding ActualWidth,RelativeSource={RelativeSource AncestorType={x:Type ListBox}}}"/>
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <Image Source="{Binding Img}" Width="96" Height="96"/>
+                                    <TextBlock HorizontalAlignment="Center" Text="{Binding Info}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </StackPanel>
+
+                <StackPanel DockPanel.Dock="Bottom" DataContext="{Binding SelectedItem,ElementName=lb}" Margin="2,15,0,0" Orientation="Vertical" >
+                    <TextBlock Text="{Binding Info,StringFormat='选中：\{0\}'}" ></TextBlock>
+                </StackPanel>
+            </DockPanel>
+        </StackPanel>
+    </Grid>
+</Window>

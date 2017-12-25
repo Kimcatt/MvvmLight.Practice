@@ -15,6 +15,7 @@
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
+using MvvmLight.Practice.ViewModel.Basic;
 
 namespace MvvmLight.Practice.ViewModel
 {
@@ -42,25 +43,109 @@ namespace MvvmLight.Practice.ViewModel
             ////    SimpleIoc.Default.Register<IDataService, DataService>();
             ////}
 
-            SimpleIoc.Default.Register<MainViewModel>();
+            SimpleIoc.Default.Register<AppViewModel>();
             //×Ô¼ºµÄViewModel
-            SimpleIoc.Default.Register<ViewModel.WelcomeViewModel>();
+            SimpleIoc.Default.Register<WelcomeViewModel>();
+            SimpleIoc.Default.Register<BothWayBindViewModel>();
+            SimpleIoc.Default.Register<ViewModel.Bind.DataContextBindViewModel>();
+            SimpleIoc.Default.Register<Sample.ComboBoxViewModel>();
+            SimpleIoc.Default.Register<Sample.RadioButtonViewModel>();
+            SimpleIoc.Default.Register<Sample.RadioButtonGroupViewModel>();
+            SimpleIoc.Default.Register<Sample.CheckBoxGroupViewModel>();
+            SimpleIoc.Default.Register<Sample.TreeViewViewModel>();
+            SimpleIoc.Default.Register<Sample.ListBoxViewModel>();
+            SimpleIoc.Default.Register<Sample.UserControlViewModel>();
+            SimpleIoc.Default.Register<Validation.FormValidationViewModel>();
+            SimpleIoc.Default.Register<Validation.ExceptionViewModel>();
+            SimpleIoc.Default.Register<Validation.ValidationRuleViewModel>();
+            SimpleIoc.Default.Register<Validation.DataErrorInfoViewModel>();
+            SimpleIoc.Default.Register<Validation.DataAnnotationViewModel>();
+            SimpleIoc.Default.Register<Validation.ValidationObjectViewModel>();
         }
 
-        public MainViewModel Main
+        public AppViewModel App
         {
-            get
-            {
-                return ServiceLocator.Current.GetInstance<MainViewModel>();
-            }
+            get { return ServiceLocator.Current.GetInstance<AppViewModel>(); }
         }
-        
+
         public WelcomeViewModel Welcome
         {
-            get
-            {
-                return ServiceLocator.Current.GetInstance<WelcomeViewModel>();
-            }
+            get { return ServiceLocator.Current.GetInstance<WelcomeViewModel>(); }
+        }
+
+        public BothWayBindViewModel BothWayBind
+        {
+            get { return ServiceLocator.Current.GetInstance<BothWayBindViewModel>(); }
+        }
+
+        public Bind.DataContextBindViewModel DataContextBind
+        {
+            get { return ServiceLocator.Current.GetInstance<Bind.DataContextBindViewModel>(); }
+        }
+
+        public Sample.ComboBoxViewModel ComboBox
+        {
+            get { return ServiceLocator.Current.GetInstance<Sample.ComboBoxViewModel>(); }
+        }
+
+        public Sample.RadioButtonViewModel RadioButton
+        {
+            get { return ServiceLocator.Current.GetInstance<Sample.RadioButtonViewModel>(); }
+        }
+
+        public Sample.RadioButtonGroupViewModel RadioButtonGroup
+        {
+            get { return ServiceLocator.Current.GetInstance<Sample.RadioButtonGroupViewModel>(); }
+        }
+
+        public Sample.CheckBoxGroupViewModel CheckBoxGroup
+        {
+            get { return ServiceLocator.Current.GetInstance<Sample.CheckBoxGroupViewModel>(); }
+        }
+
+        public Sample.TreeViewViewModel TreeView
+        {
+            get { return ServiceLocator.Current.GetInstance<Sample.TreeViewViewModel>(); }
+        }
+
+        public Sample.ListBoxViewModel ListBox
+        {
+            get { return ServiceLocator.Current.GetInstance<Sample.ListBoxViewModel>(); }
+        }
+
+        public Sample.UserControlViewModel UserControl
+        {
+            get { return ServiceLocator.Current.GetInstance<Sample.UserControlViewModel>(); }
+        }
+
+        public Validation.FormValidationViewModel FormValidation
+        {
+            get { return ServiceLocator.Current.GetInstance<Validation.FormValidationViewModel>(); }
+        }
+
+        public Validation.ExceptionViewModel Exception
+        {
+            get { return ServiceLocator.Current.GetInstance<Validation.ExceptionViewModel>(); }
+        }
+
+        public Validation.ValidationRuleViewModel ValidationRule
+        {
+            get { return ServiceLocator.Current.GetInstance<Validation.ValidationRuleViewModel>(); }
+        }
+
+        public Validation.DataErrorInfoViewModel DataErrorInfo
+        {
+            get { return ServiceLocator.Current.GetInstance<Validation.DataErrorInfoViewModel>(); }
+        }
+
+        public Validation.DataAnnotationViewModel DataAnnotation
+        {
+            get { return ServiceLocator.Current.GetInstance<Validation.DataAnnotationViewModel>(); }
+        }
+
+        public Validation.ValidationObjectViewModel ValidationObject
+        {
+            get { return ServiceLocator.Current.GetInstance<Validation.ValidationObjectViewModel>(); }
         }
 
         public static void Cleanup()

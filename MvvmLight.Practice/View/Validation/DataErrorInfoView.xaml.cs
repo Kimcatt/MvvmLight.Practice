@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MvvmLight.Practice
+namespace MvvmLight.Practice.View.Validation
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for DataErrorInfoView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class DataErrorInfoView : Window
     {
-        public MainWindow()
+        public DataErrorInfoView()
         {
             InitializeComponent();
         }
