@@ -10,9 +10,11 @@ using System.Windows;
 
 namespace MvvmLight.Practice.Utility.Validation
 {
-    public class ValidationObject : ObservableObject, IDataErrorInfo
+
+    [MetadataType(typeof(ValidatableObject))]
+    public class ValidatableObject : ObservableObject, IDataErrorInfo
     {
-        public ValidationObject()
+        public ValidatableObject()
         {
 
         }

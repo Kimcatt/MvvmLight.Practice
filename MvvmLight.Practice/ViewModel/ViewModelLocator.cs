@@ -61,6 +61,8 @@ namespace MvvmLight.Practice.ViewModel
             SimpleIoc.Default.Register<Validation.DataErrorInfoViewModel>();
             SimpleIoc.Default.Register<Validation.DataAnnotationViewModel>();
             SimpleIoc.Default.Register<Validation.ValidationObjectViewModel>();
+            SimpleIoc.Default.Register<Command.CommandBasicViewModel>();
+            SimpleIoc.Default.Register<Command.CommandAdvancedViewModel>();
         }
 
         public AppViewModel App
@@ -146,6 +148,16 @@ namespace MvvmLight.Practice.ViewModel
         public Validation.ValidationObjectViewModel ValidationObject
         {
             get { return ServiceLocator.Current.GetInstance<Validation.ValidationObjectViewModel>(); }
+        }
+
+        public Command.CommandBasicViewModel CommandBasic
+        {
+            get { return ServiceLocator.Current.GetInstance<Command.CommandBasicViewModel>(); }
+        }
+
+        public Command.CommandAdvancedViewModel CommandAdvanced
+        {
+            get { return ServiceLocator.Current.GetInstance<Command.CommandAdvancedViewModel>(); }
         }
 
         public static void Cleanup()

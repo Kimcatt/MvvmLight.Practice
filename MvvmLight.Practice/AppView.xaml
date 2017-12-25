@@ -51,6 +51,10 @@
                             CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"></Button>
                     <Button Content="ValidationObjectValidation" Height="26" Command="{Binding ValidationObjectValidationCmd}" HorizontalContentAlignment="Left"
                             CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"></Button>
+                    <Button Content="CommandBasic" Height="26" Command="{Binding CommandBasicCmd}" HorizontalContentAlignment="Left"
+                            CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"></Button>
+                    <Button Content="CommandAdvanced" Height="26" Command="{Binding CommandAdvancedCmd}" HorizontalContentAlignment="Left"
+                            CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"></Button>
                 </StackPanel>
             </Border>
             <Border BorderBrush="LightGray" Margin="-1,15,15,15" CornerRadius="0,2,2,0" BorderThickness="1" Grid.Column="1">
