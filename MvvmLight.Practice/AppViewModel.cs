@@ -225,6 +225,26 @@ namespace MvvmLight.Practice
                 }.ShowDialog();
             });
 
+            dispatcherHelperCmd = new RelayCommand<Window>((owner) => 
+            {
+                SaveCmdName(nameof(DispatcherHelperCmd));
+                new View.DispatcherHelper.DispatcherHelperView
+                {
+                    Owner = owner,
+                    ShowInTaskbar = false
+                }.ShowDialog();
+            });
+
+            messengerCmd = new RelayCommand<Window>((owner) => 
+            {
+                SaveCmdName(nameof(MessengerCmd));
+                new View.Messenger.MessengerView
+                {
+                    Owner = owner,
+                    ShowInTaskbar = false
+                }.ShowDialog();
+            });
+
             //basicBindCmd = CreateCommand<View.Bind.BasicBindView>(nameof(BasicBindCmd));
             //sourceBindCmd = CreateCommand<View.Bind.SourceBindView>(nameof(SourceBindCmd));
             //relativeSourceBindCmd = CreateCommand<View.Bind.RelativeSourceBindView>(nameof(RelativeSourceBindCmd));
@@ -437,6 +457,20 @@ namespace MvvmLight.Practice
         public RelayCommand<Window> CommandAdvancedCmd
         {
             get { return commandAdvancedCmd; }
+        }
+
+        private RelayCommand<Window> dispatcherHelperCmd;
+
+        public RelayCommand<Window> DispatcherHelperCmd
+        {
+            get { return dispatcherHelperCmd; }
+        }
+
+        private RelayCommand<Window> messengerCmd;
+
+        public RelayCommand<Window> MessengerCmd
+        {
+            get { return messengerCmd; }
         }
 
         #endregion

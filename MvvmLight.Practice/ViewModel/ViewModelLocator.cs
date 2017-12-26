@@ -63,6 +63,7 @@ namespace MvvmLight.Practice.ViewModel
             SimpleIoc.Default.Register<Validation.ValidationObjectViewModel>();
             SimpleIoc.Default.Register<Command.CommandBasicViewModel>();
             SimpleIoc.Default.Register<Command.CommandAdvancedViewModel>();
+            SimpleIoc.Default.Register<DispatcherHelper.DispatcherHelperViewModel>();
         }
 
         public AppViewModel App
@@ -158,6 +159,11 @@ namespace MvvmLight.Practice.ViewModel
         public Command.CommandAdvancedViewModel CommandAdvanced
         {
             get { return ServiceLocator.Current.GetInstance<Command.CommandAdvancedViewModel>(); }
+        }
+
+        public DispatcherHelper.DispatcherHelperViewModel DispatcherHelper
+        {
+            get { return ServiceLocator.Current.GetInstance<MvvmLight.Practice.ViewModel.DispatcherHelper.DispatcherHelperViewModel>(); }
         }
 
         public static void Cleanup()

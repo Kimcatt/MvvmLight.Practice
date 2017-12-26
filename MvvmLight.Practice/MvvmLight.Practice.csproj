@@ -78,15 +78,26 @@
     <Compile Include="Model\Command\ResTypeModel.cs" />
     <Compile Include="Model\Command\UserParamModel.cs" />
     <Compile Include="Model\Command\ValidatableUserInfoModel.cs" />
+    <Compile Include="Model\Messenger\UserPropertyModel.cs" />
     <Compile Include="Model\Sample\CompButtonModel.cs" />
     <Compile Include="Model\Sample\ComplexInfoModel.cs" />
     <Compile Include="Model\Sample\TreeNodeModel.cs" />
+    <Compile Include="Service\UserInfo\UserInfoBuilder.cs" />
+    <Compile Include="Service\UserInfo\UserInfoBuilderWithMessenger.cs" />
     <Compile Include="Utility\ValidationRule\EmailRule.cs" />
     <Compile Include="Utility\ValidationRule\RequiredRule.cs" />
     <Compile Include="Utility\Validation\ValidationObject.cs" />
+    <Compile Include="Utility\ValueConverter\BooleanToVisibilityConverter.cs" />
     <Compile Include="Utility\ValueConverter\UserParamConverter.cs" />
     <Compile Include="ViewModel\Command\CommandAdvancedViewModel.cs" />
     <Compile Include="ViewModel\Command\CommandBasicViewModel.cs" />
+    <Compile Include="ViewModel\DispatcherHelper\DispatcherHelperViewModel.cs" />
+    <Compile Include="ViewModel\Messenger\MessagePublisherViewModel.cs" />
+    <Compile Include="ViewModel\Messenger\MessageSubscriberViewModel.cs" />
+    <Compile Include="ViewModel\Messenger\MessengerSinkViewModel.cs" />
+    <Compile Include="ViewModel\Messenger\MessengerSourceViewModel.cs" />
+    <Compile Include="ViewModel\Messenger\MessengerViewModel.cs" />
+    <Compile Include="ViewModel\Messenger\MessengerWithDispatcherHelperViewModel.cs" />
     <Compile Include="ViewModel\Validation\DataAnnotationViewModel.cs" />
     <Compile Include="ViewModel\Validation\DataErrorInfoViewModel.cs" />
     <Compile Include="ViewModel\Validation\ExceptionViewModel.cs" />
@@ -98,6 +109,27 @@
     </Compile>
     <Compile Include="View\Command\CommandBasicView.xaml.cs">
       <DependentUpon>CommandBasicView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DispatcherHelper\DispatcherHelperView.xaml.cs">
+      <DependentUpon>DispatcherHelperView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Messenger\MessagePublisherView.xaml.cs">
+      <DependentUpon>MessagePublisherView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Messenger\MessageSubscriberView.xaml.cs">
+      <DependentUpon>MessageSubscriberView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Messenger\MessengerSinkView.xaml.cs">
+      <DependentUpon>MessengerSinkView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Messenger\MessengerSourceView.xaml.cs">
+      <DependentUpon>MessengerSourceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Messenger\MessengerView.xaml.cs">
+      <DependentUpon>MessengerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Messenger\MessengerWithDispatcherHelperView.xaml.cs">
+      <DependentUpon>MessengerWithDispatcherHelperView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\UserControl\FruitInfoView.xaml.cs">
       <DependentUpon>FruitInfoView.xaml</DependentUpon>
@@ -196,6 +228,34 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Command\CommandBasicView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DispatcherHelper\DispatcherHelperView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Messenger\MessagePublisherView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Messenger\MessageSubscriberView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Messenger\MessengerSinkView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Messenger\MessengerSourceView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Messenger\MessengerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Messenger\MessengerWithDispatcherHelperView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

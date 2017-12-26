@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MvvmLight.Practice"
         mc:Ignorable="d"
-        Title="MVVM Light Practice" Height="600" Width="800"
+        Title="MVVM Light Practice" Height="800" Width="1000"
         WindowStartupLocation="CenterScreen"
         DataContext="{Binding Source={StaticResource Locator}, Path=App}"
         >
@@ -55,6 +55,11 @@
                             CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"></Button>
                     <Button Content="CommandAdvanced" Height="26" Command="{Binding CommandAdvancedCmd}" HorizontalContentAlignment="Left"
                             CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"></Button>
+                    <Button Content="DispatcherHelper" Height="26" Command="{Binding DispatcherHelperCmd}" HorizontalContentAlignment="Left"
+                            CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"></Button>
+                    <Button Content="Messenger" Height="26" Command="{Binding MessengerCmd}" HorizontalContentAlignment="Left"
+                            CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"></Button>
+                    
                 </StackPanel>
             </Border>
             <Border BorderBrush="LightGray" Margin="-1,15,15,15" CornerRadius="0,2,2,0" BorderThickness="1" Grid.Column="1">
