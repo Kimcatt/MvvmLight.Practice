@@ -1,0 +1,44 @@
+﻿<Window x:Class="Practice.MvvmLight.View.Validation.ValidationObjectView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Practice.MvvmLight.View.Validation"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        DataContext="{Binding Source={StaticResource Locator}, Path=ValidationObject}"
+        Title="ValidationObjectView" Height="500" Width="500">
+    <Grid>
+        <GroupBox Header="IDataErrorInfo+ 验证（封装ValidationObject）" Margin="10 20 10 10" >
+            <StackPanel Orientation="Vertical" Margin="0,20,0,0">
+                <StackPanel Orientation="Horizontal" Margin="2">
+                    <Label Content="用户名" Target="{Binding ElementName=UserName}" Width="60"/>
+                    <TextBox Width="150" 
+                                 Text="{Binding UserName,UpdateSourceTrigger=PropertyChanged,ValidatesOnDataErrors=True}" >
+                    </TextBox>
+                </StackPanel>
+
+                <!--<StackPanel Orientation="Horizontal" Margin="2">
+                    <Label Content="性别" Target="{Binding ElementName=RadioGendeMale}" Width="60"/>
+                    <RadioButton Content="男" VerticalAlignment="Center"/>
+                    <RadioButton Content="女" Margin="8,0,0,0" VerticalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="2">
+                    <Label Content="生日" Target="{Binding ElementName=DateBirth}" Width="60"/>
+                    <DatePicker />
+                </StackPanel>-->
+                <StackPanel Orientation="Horizontal" Margin="2">
+                    <Label Content="用户邮箱" Target="{Binding ElementName=UserEmail}" Width="60"/>
+                    <TextBox Width="150" Text="{Binding UserEmail, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="2">
+                    <Label Content="用户电话" Target="{Binding ElementName=UserPhone}" Width="60"/>
+                    <TextBox Width="150" Text="{Binding UserPhone,UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+                </StackPanel>
+
+                <Button Content="提交" Margin="100,16,0,0" Width="40" HorizontalAlignment="Left" Command="{Binding ValidFormCommand}" />
+            </StackPanel>
+
+        </GroupBox>
+    </Grid>
+</Window>

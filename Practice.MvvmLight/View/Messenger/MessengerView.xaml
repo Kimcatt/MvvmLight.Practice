@@ -1,0 +1,24 @@
+﻿<Window x:Class="Practice.MvvmLight.View.Messenger.MessengerView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Practice.MvvmLight.View.Messenger"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="MessengerView" Height="600" Width="600">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <Button Content="ViewModel->View方式" Margin="2" Command="{Binding SendCommand}" Padding="4" 
+                    HorizontalContentAlignment="Left"></Button>
+            <Button Content="ViewModel->ViewModel方式" Margin="2" Command="{Binding ShowWindowCmd}" Padding="4" 
+                    HorizontalContentAlignment="Left"></Button>
+            <Button Content="MessengerWithDispatcherHelper" Margin="2" Command="{Binding MessengerWithDispatcherHelperCmd}" 
+                    Padding="4" HorizontalContentAlignment="Left"></Button>
+            <Button Content="ShowMessengerSource" Margin="2" Command="{Binding ShowMessengerSourceCmd}" Padding="4"
+                    HorizontalContentAlignment="Left"></Button>
+            <Button Content="ShowMessengerSink" Margin="2" Command="{Binding ShowMessengerSinkCmd}" Padding="4"
+                    HorizontalContentAlignment="Left"></Button>
+        </StackPanel>
+    </Grid>
+</Window>
