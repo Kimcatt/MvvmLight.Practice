@@ -1,2 +1,2 @@
-# MvvmLight.Practice
+# Practice.MvvmLight
 Run toward MvvmLight
